@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<body>
+  <h1>Select Label To View Data</h1>
+    <form action="{{ url_for('views.view_label_data') }}"  method="POST">
+    <select class="form-select" style="width: 11.5%;" name="labels" onchange="SelectRedirect();">
+      {% for label in labels %}
+      <option value="{{label}}" selected="">{{label}}</option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-primary">View</button>
+  </form>
+</body>
+{% endblock %}

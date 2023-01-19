@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+<body>
+  <h1>Select Item To View Data</h1>
+    <form action="{{ url_for('views.view_item_data') }}"  method="POST" >
+    <select class="form-select" style="width: 11.5%;" name="items" id="item_selected" onchange="SelectRedirect();">
+      {% for item in items %}
+      <option value="{{item}}" selected="">{{item}}</option>
+      {% endfor %}
+    </select>
+    <button onclick="location.href = 'view_item_data';" id="view_button" class="btn btn-primary" value={item_selected}>View</button>
+    </html>
+    </form>
+</body>
+{% endblock %}

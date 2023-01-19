@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<body>
+  <html>
+    <h1>Label Management</h1>
+    <button onclick="location.href = '/update_all_labels';"id="view_button" class="btn btn-primary" value='label_selected'>Update All Labels</button>
+    <hr>
+    <button onclick="location.href = '/remove_label';" class="btn btn-danger">Unpair Label</button>
+    <br>
+    <hr>
+    <button onclick="location.href = '/pair_new_label';" id="view_button" class="btn btn-success" value='label_selected'>Pair New Label</button>
+  </html>
+</body>
+{% endblock %}

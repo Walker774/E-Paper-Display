@@ -1,0 +1,20 @@
+body{
+    width: 30%;
+    height: 37%;
+    border: 5px solid #34807e;
+    border-radius: 20px;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(0, -50%);
+    padding: 10px;
+    font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-smooth: always;
+    overflow-x: hidden;
+    background-color: #282828;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+}
+h1{
+    color: white;
+}

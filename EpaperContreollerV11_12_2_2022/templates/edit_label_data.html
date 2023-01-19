@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block content %}
+<body>
+    <html>
+      <form action="/save_label{{nickname}}"  method="post">
+        {% set name = nickname %}
+        <label name = "save_label" value={{name}}>Edit Label: {{nickname}}</h1>
+      <label for="items">Select the item to display on the label</label>
+      <br>
+      <select class="form-select" style="width: 35%;" name="items" id="item_selected" method="GET" action="/view_label_data" multiple>
+        {% for item in items %}
+        {% if item == current_item %}
+        <option value="{{item}}" selected>{{item}}</option>
+        {% else %}
+        <option value="{{item}}">{{item}}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+      <input type="checkbox" class="btn-check" id="update_label" name="update_label" autocomplete="off" checked value="yes">
+      <label class="btn btn-outline-primary" for="update_label">Update label data after saving</label><br>
+      <hr>
+      <button type="submit" class="btn btn-success">Confirm Changes</button>
+      <a class="btn btn-danger" href="edit_labels">Cancel</a>
+    </form>
+    <br>
+    <p>Note: The ability to change the name of the label is not supported at this time</p>
+    </html>
+</body>
+{% endblock %}

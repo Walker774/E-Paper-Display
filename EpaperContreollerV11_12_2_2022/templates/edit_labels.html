@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<body>
+  <h1>Select Label To Edit Data</h1>
+    <form action="{{ url_for('views.edit_label_data') }}"  method="POST">
+    <select class="form-select" style="width: 11.5%;" name="labels" onchange="SelectRedirect();">
+      {% for label in labels %}
+      <option value="{{label}}" selected>{{label}}</option>
+      {% endfor %}
+    </select>
+    <p>Note: The ability to change the name of the label is not supported at this time</p>
+    <hr>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</body>
+{% endblock %}

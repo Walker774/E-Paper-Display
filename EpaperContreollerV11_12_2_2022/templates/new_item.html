@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<body>
+    <h1>Manage Items</h1>
+    <form action="{{ url_for('views.save_new_item') }}"  method="POST">
+    <div class="input-group input-group-sm mb-3" style="max-width: 300px;">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Inventory/File ID</span>
+        <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" maxlength="20" id="item_id"name ="item_id">
+    </div>
+    <div class="input-group input-group-sm mb-3" style="max-width: 300px;">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Display Name</span>
+        <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" maxlength="20" id="name"name ="name">
+    </div>
+    <div class="input-group input-group-sm mb-3" style="max-width: 300px;">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Product UPC</span>
+        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="20" name="upc">
+    </div>
+    <div class = "input-group mb-3" style="max-width: 300px;">
+        <label class="input-group-text" for="price" >Price $</label>
+        <input type="text" class="form-control" id="price" aria-label="Dollar amount (with dot and two decimal places)" name = "price" maxlength="20">
+        <select class="form-select" id="inputGroupSelect01"  style="max-width: 80px;" name="units">
+            <option value="/KG">/KG</option>
+            <option value="/EA" selected>/EA</option>
+        </select>
+    </div>
+    <div class="input-group input-group-sm mb-3" style="max-width: 300px;">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Sale Starts</span>
+        <input type="date" class = "form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="20" name="sale_start">
+    </div>
+    <div class="input-group input-group-sm mb-3" style="max-width: 300px;">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Sale Ends</span>
+        <input type="date" class = "form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="20" name="sale_end">
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a class="btn btn-danger" href="edit_items">Cancel</a>
+    </form>
+</body>
+{% endblock %}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <meta content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi' name='viewport'>
+  </head>
+  
+    <div id='topbar'>
+        <label for='sidebar-check' id='sidebar-toggle' onclick=''>☰</label>
+        <div id='page-title'><label onclick="location.href = 'dashboard';" id="register" value='register'>Dashboard</button></div>
+        <!-- top -->
+    <div id='content'>
+      <input checked id='sidebar-check' type='checkbox'>
+      <div id='sidebar'>
+        <input class='category-check' id='labels' type='checkbox'>
+        <div class='category'>
+          <label class='category-label' for='labels' onclick=''>Labels</label>
+          <ul class='category-list'>
+            <li>
+              <label onclick="location.href='view_labels'">View Labels</label>
+            </li>
+            <li>
+              <label onclick="location.href='/edit_labels'">Edit Labels</label>
+            </li>
+            <li>
+              <label onclick="location.href='/manage_labels'">Manage Labels</label>
+            </li>
+          </ul>
+        </div>
+        <input class='category-check' id='items' type='checkbox'>
+        <div class='category'>
+          <label class='category-label' for='items' onclick=''>Items</label>
+          <ul class='category-list'>
+            <li>
+              <label onclick="location.href='/view_items'">View Items</label>
+            </li>
+            <li>
+              <label onclick="location.href='/edit_items'">Edit Items</label>
+            </li>
+            <li>
+              <label onclick="location.href='/manage_items'">Manage Items</label>
+            </li>
+          </ul>
+        </div>
+        <input class='category-check' id='settings' type='checkbox'>
+        <div class='category'>
+          <label class='category-label' for='settings' onclick=''>Settings</label>
+          <ul class='category-list'>
+            <li>
+              <label onclick="location.href='/server_settings'">Server Settings</label>
+            </li>
+            <li>
+              <label onclick="location.href='/security_settings'">Security Settings</label>
+            </li>
+            <li>
+              <label onclick="location.href='/power_options'">Power Options</label>
+            </li>
+            <li>
+              <label onclick="location.href='/logout'">Logout</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main'>
+        {% block content %}
+        {% endblock %}
+      </div>
+      <!-- sidebar -->
+    </div>
+</html>
